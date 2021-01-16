@@ -1,0 +1,113 @@
+-  git config --global user.name "lijushuai"
+
+- git config --global user.email "1688@163.com"
+
+- git init
+
+- ll -la(查看目录)
+
+- git add Demo.txt
+
+-  git commit -m "这是我提交的第一个文件 Demo.txt"
+
+-  git status
+
+查看日志
+- git log 查看历史提交的日志
+
+- git log --pretty=oneline在一行显示索引与日志
+
+- git log --oneline 可以看到简洁版的日志
+
+- git reflog HEAD@{数字}表示key值(指针回到这个历史版本需要几步)
+
+回退到指定的版本
+- git reset --hard Head~0 表示回退到上一次代码提交的状态
+
+- git reset --hard Head~1 表示回退到上上次代码提交的状态
+
+- git reset --hard [版本号] 可以通过版本号精确的回退到某一次提交时的状态
+  +本地库指针移动的同时，重置暂存区，重置工作区（一般用这个）
+
+*    工作区----》暂存区----》本地库    *
+
+- git reset --mixed
+  +本地库指针移动的同时，重置暂存区，但是工作区不动
+
+- git reset --sorf
+  +本地库指针移动的同时，暂存区与工作区都不动
+
+-git reflog 可以看到每一次切换版本的记录：可以看到所有提交的版本号
+
+删除：
+- rm 文件名  删除工作区数据
+- git add 文件名  同步到缓存区 可以通过git reflog跟git reset --hard 索引 恢复暂存区数据 或者使用git reset --hard HEAD 
+ - git commit -m "备注" 文件名
+
+diff命令
+- git diff 文件名  比较工作区跟暂存区里文件
+- git diff  多个文件的比对
+- git diff 历史版本索引 文件名  比较暂存区和工作区中的内容 也可以用git diff HEAD (与当前指针比较)
+
+分支
+- 默认有一个主分支master
+
+- git branch -v  查看当前版本所有分支
+
+- git branch branch01  创建分支branch01  * 表示当前在哪个分支上
+
+- git checkout branch01 切换到branch01分支
+
+合并分支：
+-------------------------------------------------------------------------
+*    一：切换到主分支  git checkout master                                           *
+*    二：选择要合并的分支 git merge  要合并的分支名                            *
+*    三：手动解决冲突,可以查看文件 cat  引起冲突的文件                         *
+*    四：将解决了冲突的文件放入暂存区 git add 解决了冲突的文件名       *
+*    五：进行commit操作 git commit -m "注释"（注意不要再加文件名）*
+-------------------------------------------------------------------------
+
+创建分支
+- git branch dev
+  +创建了一个dev分支
+  +在刚创建时dev分支里的东西和master分支里的东西是一样的
+
+- cat 文件名  检查文件内容
+
+切换分支
+- git checkout dev
+  +切换到指定的分支，这里切换到名为dev的分支
+  +git branch 可以查看当前有哪些分支
+
+合并分支
+- git merge dev
+  +合并当前分支内容，把当前分支与指定的分支（dev），进行合并
+  +当前分支指的是git branch命令输出的前面有*号的分支
+-合并时如果有冲突，需要手动处理，处理后还需要再提交一次
+
+GitHub
+- http://github.com
+- 一个网站
+- 允许通过git上传代码
+
+提交代码到github(当作git服务器来用)
+- git push [地址] master
+  +会把当前分支内容上传到远程的master分支上
+
+- git pull [地址] master
+  + 会把远程分支的数据得到：(*需要注意本地要初始化一个仓库*)
+
+- git clone [地址]
+  + 会得到远程仓库相同的数据，如果多次执行会覆盖本地内容
+
+流行框架
+
+ssh方式上传代码
+- 公钥 私钥，俩者之间有关联
+- 生成公钥，
+
+push和pull操作
+- 先pull 再push
+- 当我们在push时，加上-u参数，那么在下一次push时
+- 我们只需要写git push就能上传我们的代码。
+- 同样使用于pull
