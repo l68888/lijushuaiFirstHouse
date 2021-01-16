@@ -111,3 +111,9 @@ push和pull操作
 - 当我们在push时，加上-u参数，那么在下一次push时
 - 我们只需要写git push就能上传我们的代码。
 - 同样使用于pull
+
+- git remote -v  查看别名
+
+- git remote add origin https://github.com/l68888/lijushuaiFirstHouse.git  添加别名 一般用origin可以改
+
+- git push origin master 推送操作（origin为库的别名）
