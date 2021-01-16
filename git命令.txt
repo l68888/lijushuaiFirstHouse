@@ -117,3 +117,12 @@ push和pull操作
 - git remote add origin https://github.com/l68888/lijushuaiFirstHouse.git  添加别名 一般用origin可以改
 
 - git push origin master 推送操作（origin为库的别名）
+
+克隆操作：
+- git clone https://github.com/l68888/lijushuaiFirstHouse.git  远程库的地址
+可以帮我们完成三件事：
+--------------------------------------------
+*    一：初始化本地库                                *
+*    二：将远程库内容完整的克隆到本地     *
+*    三：替我们创建远程库的别名 origin     *
+--------------------------------------------
