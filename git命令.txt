@@ -126,3 +126,23 @@ push和pull操作
 *    二：将远程库内容完整的克隆到本地     *
 *    三：替我们创建远程库的别名 origin     *
 --------------------------------------------
+
+- git fetch origin master 抓取操作 只是将远程库内容下载到本地，但是工作区中的文件并没有更新
+
+- git checout origin/master (切换到远程库中master分支)
+
+- ll  查看里面所有文件
+
+- cat 文件名  查看指定文件内容
+
+- git checkout master  切换到当前仓库master
+
+- git merge origin/master  将远程库与当前库master分支合并
+
+- pull操作
+------------------------------------------------
+*    命令： git pull origin master                      *
+*    作用：将远程库与当前库master分支合并     *
+*    相当于fetch操作加merge操作的合并           *
+*    注意：pull有风险，不如fetch与merge合并  *
+------------------------------------------------
